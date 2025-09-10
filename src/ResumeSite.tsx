@@ -23,7 +23,7 @@ import {
 const DATA = {
   name: "Кирилл Кузнецов",
   title: "Системный аналитик / Руководитель спецпроектов",
-  location: "Москва, м. Петровско-Разумовская",
+  location: "Москва, м. Свиблово",
   phone: "+7 (968) 752-79-92",
   email: "KllKKuznetsov@yandex.com",
   links: {
