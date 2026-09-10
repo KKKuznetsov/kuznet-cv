@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Bot,
+  BrainCircuit,
   BriefcaseBusiness,
   CheckCircle2,
   Code2,
@@ -12,7 +13,6 @@ import {
   Mail,
   MapPin,
   Printer,
-  ShieldCheck,
   Sparkles,
   Workflow,
 } from "lucide-react";
@@ -20,7 +20,7 @@ import type { ReactNode } from "react";
 
 const profile = {
   name: "Kirill Kuznetsov",
-  role: "Data Automation & Database Specialist",
+  role: "Data Automation, Database & ML Specialist",
   email: "KllKKuznetsov@yandex.com",
   location: "Remote · International",
   github: "https://github.com/KKKuznetsov",
@@ -30,7 +30,7 @@ const profile = {
 const stats = [
   { value: "8+", label: "years in data & automation" },
   { value: "20", label: "specialists in the team I lead" },
-  { value: "4", label: "core tools: Excel, VBA, Python, SQL" },
+  { value: "5", label: "core areas: Excel/VBA, Python, SQL, ML, automation" },
   { value: "Global", label: "pharmaceutical data projects" },
 ];
 
@@ -51,9 +51,9 @@ const services = [
     text: "Database schemas, stored procedures, imports/exports, transformations, reference data and repeatable data pipelines.",
   },
   {
-    icon: ShieldCheck,
-    title: "Data Quality & Matching",
-    text: "Cleaning, deduplication, reference matching, classification, configurable rules and review queues for ambiguous records.",
+    icon: BrainCircuit,
+    title: "Machine Learning Automation",
+    text: "Practical scikit-learn classifiers, text/data feature engineering, confidence thresholds and hybrid ML + rule-based workflows.",
   },
   {
     icon: Bot,
@@ -62,8 +62,8 @@ const services = [
   },
   {
     icon: Workflow,
-    title: "Recurring Reporting",
-    text: "From raw source files to validated, structured reports with predictable folders, naming rules and scheduled execution.",
+    title: "Data Quality & Reporting",
+    text: "Cleaning, matching, deduplication and recurring reporting workflows with review queues for uncertain records.",
   },
 ];
 
@@ -80,13 +80,13 @@ const projects = [
     linkLabel: "View public framework",
   },
   {
-    title: "Large-Scale Address & Data Quality Enrichment",
-    kicker: "Classification & normalization",
+    title: "Machine Learning Classification & Enrichment",
+    kicker: "ML automation",
     description:
-      "Designed a pipeline for hundreds of thousands of address records using character-level machine-learning models together with configurable regex rules and confidence thresholds.",
+      "Built and applied character-level TF-IDF + SVC classification models for large-scale address and data enrichment, combined with configurable regex rules and confidence thresholds.",
     outcome:
-      "Made classification more consistent, auditable and easier to maintain while keeping uncertain cases out of automatic decisions.",
-    tags: ["Python", "Machine Learning", "Regex", "Excel"],
+      "Automated classification across hundreds of thousands of records while routing low-confidence cases for review instead of forcing unreliable predictions.",
+    tags: ["Python", "scikit-learn", "TF-IDF", "SVC", "Regex"],
   },
   {
     title: "Incremental Public Data Loader",
@@ -131,7 +131,7 @@ const experience = [
     period: "2021 — Present",
     role: "Head of Special Projects",
     company: "RNC Pharma",
-    text: "Lead a 20-person cross-functional team of developers, analysts, managers and data specialists. The department designs databases, data models and automation solutions for leading global pharmaceutical companies. I remain directly involved in requirements, architecture, data workflows and solution review.",
+    text: "Lead a 20-person cross-functional team of developers, analysts, managers and data specialists. The department designs databases, data models and automation solutions for leading global pharmaceutical companies. I remain directly involved in requirements, architecture, data workflows, ML-assisted classification and solution review.",
   },
   {
     period: "2020",
@@ -190,7 +190,7 @@ export default function ResumeSite() {
               <Printer className="h-4 w-4" /> PDF
             </button>
             <a
-              href={`mailto:${profile.email}?subject=Automation%20project`}
+              href={`mailto:${profile.email}?subject=Automation%20or%20ML%20project`}
               className="inline-flex items-center gap-2 rounded-xl bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
             >
               Contact me <ArrowRight className="h-4 w-4" />
@@ -203,18 +203,18 @@ export default function ResumeSite() {
         <section className="grid items-center gap-12 pb-20 md:grid-cols-[1.3fr_0.7fr] md:pb-28">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-400/10 px-3 py-1.5 text-sm text-emerald-300">
-              <Sparkles className="h-4 w-4" /> Available for fixed-scope automation projects
+              <Sparkles className="h-4 w-4" /> Available for automation & practical ML projects
             </div>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.18em] text-slate-400">{profile.role}</p>
             <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-[-0.035em] text-white sm:text-5xl md:text-7xl">
               I turn repetitive data work into reliable automation.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-              Excel, VBA, Python and SQL solutions for teams that want fewer manual steps, cleaner data and repeatable reporting workflows.
+              Excel, VBA, Python, SQL and practical machine-learning solutions for teams that want fewer manual steps, cleaner data and repeatable workflows.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={`mailto:${profile.email}?subject=Automation%20project`}
+                href={`mailto:${profile.email}?subject=Automation%20or%20ML%20project`}
                 className="inline-flex items-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-emerald-300"
               >
                 Discuss a project <ArrowRight className="h-4 w-4" />
@@ -247,9 +247,9 @@ export default function ResumeSite() {
             className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-2xl shadow-black/20"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-400">Fast pilot</p>
-            <h2 className="mt-3 text-2xl font-semibold text-white">Start with one painful workflow.</h2>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Start with one painful workflow or classification problem.</h2>
             <p className="mt-3 leading-7 text-slate-400">
-              Send an anonymized sample and the expected result. I will define a small deliverable first instead of turning it into a large consulting project.
+              Send an anonymized sample and the expected result. I will define a small automation or ML deliverable first instead of turning it into a large consulting project.
             </p>
             <div className="mt-6 rounded-2xl border border-emerald-300/15 bg-emerald-400/[0.06] p-5">
               <div className="flex items-end justify-between gap-4">
@@ -259,7 +259,7 @@ export default function ResumeSite() {
                 </div>
                 <CheckCircle2 className="h-7 w-7 text-emerald-400" />
               </div>
-              <p className="mt-3 text-sm leading-6 text-slate-400">Fixed scope after sample review. Larger integrations are estimated separately.</p>
+              <p className="mt-3 text-sm leading-6 text-slate-400">Fixed scope after sample review. Larger integrations or model development are estimated separately.</p>
             </div>
           </motion.aside>
         </section>
@@ -276,8 +276,8 @@ export default function ResumeSite() {
         <section id="services" className="scroll-mt-24 py-20 md:py-28">
           <SectionHeading
             eyebrow="What I automate"
-            title="Practical automation around the tools your team already uses."
-            text="The goal is not to introduce unnecessary infrastructure. I start from the existing workflow, identify repetitive steps and build the smallest reliable solution that removes them."
+            title="Practical automation around the tools and data your team already uses."
+            text="The goal is not to introduce unnecessary infrastructure. I start from the existing workflow, identify repetitive or classification-heavy steps and build the smallest reliable solution that removes them."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {services.map(({ icon: Icon, title, text }) => (
@@ -375,9 +375,11 @@ export default function ResumeSite() {
               {[
                 "Merge and validate recurring Excel/CSV files",
                 "Replace a repetitive VBA/Excel process",
+                "Build a practical text/data classifier with confidence thresholds",
                 "Import spreadsheets into SQL Server",
                 "Automate a recurring report",
                 "Fix or extend an existing Python/VBA script",
+                "Create an ML + rules workflow for classification or enrichment",
                 "Collect authorized web/API data into Excel or SQL",
               ].map((item) => (
                 <div key={item} className="flex gap-3 rounded-xl border border-white/8 bg-black/10 p-4">
@@ -392,14 +394,14 @@ export default function ResumeSite() {
         <section id="contact" className="rounded-3xl border border-emerald-300/15 bg-emerald-400/[0.08] p-7 text-center md:p-12">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">Let’s make one process disappear</p>
           <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-white md:text-5xl">
-            Show me the manual workflow. I’ll tell you what can be automated.
+            Show me the manual workflow or classification problem. I’ll tell you what can be automated.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">
-            Send an anonymized sample, a short description of the steps and the output you expect. I can usually define a small pilot before any large commitment.
+            Send an anonymized sample, a short description of the steps and the output you expect. I can usually define a small automation or ML pilot before any large commitment.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
-              href={`mailto:${profile.email}?subject=Automation%20project`}
+              href={`mailto:${profile.email}?subject=Automation%20or%20ML%20project`}
               className="inline-flex items-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-emerald-300"
             >
               <Mail className="h-4 w-4" /> Email me
@@ -419,7 +421,7 @@ export default function ResumeSite() {
       <footer className="relative border-t border-white/5 py-8 print:hidden">
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-3 px-5 text-sm text-slate-600 sm:flex-row md:px-8">
           <span>© {new Date().getFullYear()} Kirill Kuznetsov</span>
-          <span>Excel · VBA · Python · SQL Server · Data Automation</span>
+          <span>Excel · VBA · Python · SQL Server · Machine Learning · Automation</span>
         </div>
       </footer>
     </div>
