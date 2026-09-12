@@ -40,6 +40,6 @@ Three projects created and integrated into business workflows. My role covered i
 
 ## Verification scope
 
-September 2026: 15 focused offline tests passed on the reviewed copies. Tests use synthetic inputs. They are regression checks, not production performance benchmarks. Live SQL Server/1C, Windows Excel COM and live 2GIS selector behavior were not validated in this review. Integration testing is required before deploying the changes.
+September 2026: 18 focused local tests passed on the reviewed copies, including SQLite lookup checks and concurrent JSON publication. Tests use synthetic inputs. They are regression checks, not production performance benchmarks. Live SQL Server/1C and Windows Excel COM were not validated in this review. A subsequent live-browser check of 2GIS exposed outdated suggestion selectors and district labels without the keyword expected by the parser. The current automated lookup therefore needs adaptation before production use. The four parser tests validate file handling, not live lookup correctness. Integration testing is required before deploying the changes.
 
 Client datasets, internal infrastructure paths and production configuration are excluded from these public descriptions. No client savings, throughput or accuracy figures are asserted.
