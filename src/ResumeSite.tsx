@@ -181,7 +181,7 @@ export default function ResumeSite() {
           </a>
           <nav className="flex items-center gap-2 md:gap-5">
             <a href="#services" className="hidden text-sm text-slate-400 transition hover:text-white sm:block">Services</a>
-            <a href="#work" className="hidden text-sm text-slate-400 transition hover:text-white sm:block">Work</a>
+            <a href={`${import.meta.env.BASE_URL}portfolio.html`} className="text-sm text-slate-400 transition hover:text-white">Case studies & PDFs</a>
             <a href="#experience" className="hidden text-sm text-slate-400 transition hover:text-white md:block">Experience</a>
             <button
               onClick={() => window.print()}
@@ -220,7 +220,7 @@ export default function ResumeSite() {
                 Discuss a project <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="#work"
+                href={`${import.meta.env.BASE_URL}portfolio.html`}
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-3 font-medium text-white transition hover:bg-white/[0.07]"
               >
                 View selected work
